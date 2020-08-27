@@ -1,0 +1,263 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #f1f3f4;
+  font-family: sans-serif;
+}
+
+.top-nav-bar {
+  height: 57px;
+  top: 0;
+  position: sticky;
+  background: #fff;
+  margin-bottom: 20px;
+  border-bottom: 3px solid #b603fc;
+  z-index: 2; /* NOTE: proprietatea specifica ordinea stivei unui element */
+}
+
+.logo {
+  height: 40px;
+  margin: 5px 10px;
+}
+
+.login-status {
+  text-align: center;
+}
+.logged {
+  margin: auto;
+  width: 50%;
+  border: 1px solid green;
+}
+
+/*  Search bar   */
+.form-control {
+  margin-top: 9px;
+  margin-left: 30px;
+
+  border: 1px solid #f1f3f4 !important;
+  border-top-left-radius: 20px !important;
+  border-bottom-left-radius: 20px !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.input-group-text {
+  background: #b603fc !important;
+  border: 0px solid #f1f3f4 !important;
+  margin: 8.5px 10px 3px 0 !important;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  border-top-right-radius: 20px !important;
+  border-bottom-right-radius: 20px !important;
+  cursor: pointer;
+}
+
+.search-box {
+  display: inline-flex; /* NOTE: alinierea elementelor */
+  width: 60%;
+}
+
+.fa-search {
+  color: #fff;
+}
+
+.menu-bar {
+  width: 40%;
+  height: 57px;
+  float: right;
+}
+
+.menu-bar ul {
+  display: inline-flex;
+  float: right;
+}
+
+.menu-bar ul li {
+  border-left: 1px solid #fff;
+  list-style-type: none;
+  padding: 15px 35px;
+  text-align: center;
+  background-color: #b603fc;
+  cursor: pointer;
+}
+
+.menu-bar ul li a {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+.menu-bar ul form {
+  background-color: #b603fc;
+  border-left: 1px solid #fff;
+  padding: 15px 35px;
+  text-align: center;
+}
+.menu-bar ul form button {
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #b603fc;
+  border: 0px;
+  color: #fff;
+}
+
+.fa-shopping-basket {
+  margin-right: 5px;
+}
+
+@media only screen and (max-width: 980px) {
+  /* NOTE: pentru ca site ul sa poata fi utilizat pe device-uri mai mici */
+  .top-nav-bar {
+    height: 118px;
+    border-bottom: 0;
+  }
+  .search-bar {
+    width: 100%;
+  }
+  .menu-bar {
+    width: 100%;
+  }
+  .menu-bar ul {
+    margin: 10px 0;
+    width: 100%;
+  }
+  .menu-bar ul li {
+    height: 57px;
+    width: 100%;
+  }
+}
+
+/* NOTE:         SIDE-MENU */
+
+.side-menu {
+  height: 464px;
+  width: 15%;
+  font-size: 14px;
+  float: left;
+  z-index: 2;
+  background-color: #ddd;
+}
+
+.side-menu ul {
+  margin-left: 10px;
+}
+
+.side-menu ul li {
+  list-style-type: none;
+  font-weight: bold;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.side-menu ul li:hover {
+  color: #b603fc;
+}
+
+.side-menu ul li ul {
+  display: none;
+  z-index: 10;
+  top: 75px; /* NOTE: pozitionarea  submeniurilor */
+}
+
+.side-menu ul li:hover ul {
+  display: block;
+  height: 400px;
+  margin-left: 14%;
+  padding: 0 100px 10px 10px;
+  position: fixed;
+  background: #ececec;
+  box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.5);
+}
+
+.fa-angle-right {
+  margin-top: 4px;
+  margin-right: 8px;
+  float: right;
+}
+
+#menu-btn,
+#close-btn {
+  font-size: 30px;
+  margin: 10px;
+  color: #b603fc;
+  display: none;
+}
+
+@media only screen and (max-width: 980px) {
+  .side-menu {
+    width: 34%;
+    z-index: 20;
+    top: 133px;
+    position: fixed;
+    font-size: 12px;
+    display: none;
+    /* NOTE: pentru a activa meniul doar atunci cand se apasa iconita bars */
+  }
+
+  .side-menu ul li ul {
+    top: 133px;
+  }
+  .side-menu ul li:hover ul {
+    margin-left: 14%;
+  }
+
+  #menu-btn {
+    display: block;
+  }
+}
+
+/*                    SLIDER                */
+
+.slider {
+  width: 85%;
+  margin-left: 15%;
+  padding: 0 10px;
+}
+
+.carousel-indicators {
+  z-index: 1 !important;
+}
+
+@media only screen and (max-width: 980px) {
+  .slider {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+/*               produse                        */
+
+.produse {
+  padding: 50px 0;
+}
+
+.imagine {
+  width: 100%;
+  padding: 20px 0;
+  cursor: pointer;
+}
+
+/*             footer                             */
+
+.footer {
+  margin-top: 50px;
+  background: black;
+  color: #fff;
+}
+.footer h1 {
+  font-size: 15px;
+  margin: 25px 0;
+}
+
+.footer p {
+  font-size: 12px;
+}
+
+.footer .row .fa {
+  font-size: 15px;
+}

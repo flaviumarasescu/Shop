@@ -15,12 +15,7 @@
       <div class="container">
         <h1>Sign up</h1>
         <?php
-        if ($_GET["error"] == "invalidmail") {
-          echo '<p>Invalid e-mail</p>';
-        } else if ($_GET['signup'] == "success") {
-          echo '<p>Signup Successfull!</p>';
-        }
-        ?>
+      
         <hr>
 
         <label><b>Username</b></label>

@@ -7,15 +7,6 @@ if(isset($_POST['login-submit'])){
     $mailuid = $_POST['mailuid'];
     $password = $_POST['pwd'];
 
-/*
-    if(empty($mailuid) || empty($password)){
-        header("Location: ../index.php?error=emptyfields");
-    exit();
-    }
-    else{
-        cod...
-    }
-*/
 
     $sql = "SELECT * FROM users WHERE uidUsers=? OR emailUsers=?;";
     $stmt = mysqli_stmt_init($conn);
@@ -28,10 +19,10 @@ if(isset($_POST['login-submit'])){
         mysqli_stmt_execute($stmt);
         //rezultatele din SELECT; 
         $result = mysqli_stmt_get_result($stmt);
-        //trebuie sa avem un if cu care verificam daca am primit vreun rezultat de la baza de date
+        //if care verifica daca am primit vreun rezultat de la baza de date
         if($row = mysqli_fetch_assoc($result)){
-            //verifica daca parola introduse de user se potriveste cu parola din bd
-            $pwdCheck = password_verify($password, $row['pwdUsers']);  //$pwdCheck va primit 0 sau 1 boolean
+            //verifica daca parola introdusa de user se potriveste cu parola din bd
+            $pwdCheck = password_verify($password, $row['pwdUsers']);  
             if($pwdCheck == false){
                 header("Location: ../index.php?error=wrongpwd");
                 exit();
